@@ -15,26 +15,28 @@ Create your functions
 
 def saving():
     goal = int(input("what is the goal you are saving for: "))
-    often = input("how often are you going to deposit: ")
+    often = input("how often are you going to deposit (daily, weekly, montly or yearly): ")
     amount = int(input("how much are you going to deposit each time: "))
     time = goal / amount
     if often == "daily" or often == "Daily":
-        print("")
+        print("It would take you", time, "days to save your goal of $", goal)
     elif often == "weekly" or often == "Weekly":
-        pass
+        print("It would take you", time, "weeks to save your goal of $", goal)
     elif often == "monthly" or often == "Monthly":
-        pass
+        print("It would take you", time, "months to save your goal of $", goal)
     elif often == "yearly" or often == "Yearly":
-        pass
+        print("It will take you", time, "years to save your goal of $", goal)
     else:
         print("that is not an option")
 
 def interest():
     money_old = int(input("enter how much money is in the account: "))
-    rate = int(input("enter the yearly intrest rate of the account: "))
+    rate = float(input("enter the yearly intrest rate of the account: "))
     time = int(input("enter how long the account will accumulate intrest for (in years): "))
     rate = rate / 100
-    money_new = (money_old + (money_old * rate)) * time
+    money_new = money_old
+    for t in range(time):
+        money_new = (money_new + (money_new * rate))
     print("$", money_old, "became $", money_new, "over", time, "years!")
 
 def budget():
@@ -72,4 +74,5 @@ def main():
 while True:
     end = main()
     if end == "end":
+        print("thank you for using this program")
         break
