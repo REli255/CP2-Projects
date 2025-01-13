@@ -43,10 +43,18 @@ def budget():
     pass
 
 def sale():
-    pass
+    price_old = int(input("enter the original price of the item: "))
+    sale = int(input("enter what precent off the item is: "))
+    sale = sale / 100
+    price_new = price_old - (price_old * sale)
+    print("the new price of the item on sale is $", price_new)
 
 def tip():
-    pass
+    spent = int(input("enter the original price of the item: "))
+    rate = int(input("enter what precent off the item is: "))
+    rate = rate / 100
+    your_tip = spent + (spent * rate)
+    print("the new price of the item on sale is $", your_tip)
 
 def main():
     choice = input("""1. Calculate how long it will take to Save for a Goal
