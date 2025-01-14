@@ -40,7 +40,15 @@ def interest():
     print("$", money_old, "became $", money_new, "over", time, "years!")
 
 def budget():
-    pass
+    income = int(input("enter how much you make each month: "))
+    savings = int(input("enter what percent you want to go to savings: "))
+    entertainment = int(input("enter what percent you want to go to entertainment: "))
+    food = int(input("enter what percent you want to go to food: "))
+    savings = (savings/100) * income
+    entertainment = (entertainment/100) * income
+    food = (food/100) * income
+    other = income - (savings + entertainment + food)
+    print("each month you will have $", savings, "to put towards savings, $", entertainment, "to spend on entertainment, $", food, "to spend on food and $", other, "to spend on anything else.")
 
 def sale():
     price_old = int(input("enter the original price of the item: "))
@@ -50,11 +58,11 @@ def sale():
     print("the new price of the item on sale is $", price_new)
 
 def tip():
-    spent = int(input("enter the original price of the item: "))
-    rate = int(input("enter what precent off the item is: "))
+    spent = int(input("enter the price of the service: "))
+    rate = int(input("enter what precent you would like to tip: "))
     rate = rate / 100
-    your_tip = spent + (spent * rate)
-    print("the new price of the item on sale is $", your_tip)
+    your_tip = spent * rate
+    print("the the amount you should tip is $", your_tip)
 
 def main():
     choice = input("""1. Calculate how long it will take to Save for a Goal
