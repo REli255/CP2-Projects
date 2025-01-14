@@ -1,26 +1,56 @@
 # Eli Robison, Personal Library
 
+"""
+Create a program that allows user to manage a personal library catalog for any ONE
+type (books, movies, music, etc). The project needs to allow users to add new items,
+display ALL contents, search for a specific item (by title, author/artist/director),
+remove a book from the library, exit the program. 
 
+PROJECT STEPS:
+Stores all items in a list
+Function to add a new item
+Function to search the items
+Function to remove an item
+Function that runs the code (displays the menu options inside and calls the, functions inside of a while True loop)
+Project must include
+easy to understand variable and function names
+Pseudocode comments explaining what the code is doing
+Good use of white space to keep items separate and easy to read/find
+Have at least 2 people test your code before submission!
+"""
+
+library = []
+
+def add():
+    title = input("enter the title of the book you want to add: ")
+    author = input("enter the author of the book you want to add: ")
+    book = [title, author]
+    library.__add__(book)
+
+def search():
+    pass
+
+def remove():
+    pass
 
 def main():
-    choice = input("""1. Calculate how long it will take to Save for a Goal
-    2. Compound Interest Calculator
-    3. Budget Allocator
-    4. Sale Price Calculator
-    5. Tip Calculator
-    6. End
+    choice = input("""1. Add a new book
+    2. Search the library
+    3. Remove a book
+    4. Display library
+    5. End
     Enter the number of the thing you would like to do: """)
     if choice == "1":
-        saving()
+        add()
     elif choice == "2":
-        interest()
+        search()
     elif choice == "3":
-        budget()
+        remove()
     elif choice == "4":
-        sale()
+        len(library)
+        for b in range(len(library)):
+            print(library[b][0])
     elif choice == "5":
-        tip()
-    elif choice == "6":
         return "end"
     else:
         print("that is not an option")
