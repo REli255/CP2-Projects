@@ -53,7 +53,12 @@ def remove():
     title = input("enter the title of the book you want to remove: ")
     author = input("enter the author of the book you want to remove: ")
     book = [title, author]
-    library.remove(book)
+    found = 0
+    if item in library[x][1]:
+        library.remove(book)
+        found += 1
+    if found == 0:
+            print("there is not a book in the library that fits your search")
 
 def main():
     choice = input("""1. Add a new book
