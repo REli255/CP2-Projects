@@ -25,13 +25,35 @@ def add():
     title = input("enter the title of the book you want to add: ")
     author = input("enter the author of the book you want to add: ")
     book = [title, author]
-    library.__add__(book)
+    library.append(book)
 
 def search():
-    pass
+    for z in range(1):
+        found = 0
+        type = input("do you want to search by title or author: ")
+        if type == "title" or type == "Title" or type == "TITLE":
+            item = input("enter the title of the book you are searching for: ")
+            for x in range(len(library)):
+                if item in library[x][0]:
+                    print(library[x])
+                    found += 1
+        elif type == "author" or type == "Author" or type == "AUTHOR":
+            item = input("enter the author of the book you are searching for: ")
+            for x in range(len(library)):
+                if item in library[x][1]:
+                    print(library[x])
+                    found += 1
+        else:
+            print("that is not an option")
+            pass
+        if found == 0:
+            print("there is not a book in the library that fits your search")
 
 def remove():
-    pass
+    title = input("enter the title of the book you want to remove: ")
+    author = input("enter the author of the book you want to remove: ")
+    book = [title, author]
+    library.remove(book)
 
 def main():
     choice = input("""1. Add a new book
@@ -47,7 +69,6 @@ def main():
     elif choice == "3":
         remove()
     elif choice == "4":
-        len(library)
         for b in range(len(library)):
             print(library[b][0])
     elif choice == "5":
