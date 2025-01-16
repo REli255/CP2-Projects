@@ -24,7 +24,7 @@ library = []
 def add():
     title = input("enter the title of the book you want to add: ")
     author = input("enter the author of the book you want to add: ")
-    book = [title, author]
+    book = (title, author)
     library.append(book)
 
 def search():
@@ -35,13 +35,13 @@ def search():
             item = input("enter the title of the book you are searching for: ")
             for x in range(len(library)):
                 if item in library[x][0]:
-                    print(library[x])
+                    print(library[x][0], "by", library[x][1])
                     found += 1
         elif type == "author" or type == "Author" or type == "AUTHOR":
             item = input("enter the author of the book you are searching for: ")
             for x in range(len(library)):
                 if item in library[x][1]:
-                    print(library[x])
+                    print(library[x][0], "by", library[x][1])
                     found += 1
         else:
             print("that is not an option")
@@ -52,11 +52,13 @@ def search():
 def remove():
     title = input("enter the title of the book you want to remove: ")
     author = input("enter the author of the book you want to remove: ")
-    book = [title, author]
+    book = (title, author)
     found = 0
-    if item in library[x][1]:
-        library.remove(book)
-        found += 1
+    for x in range(len(library)):
+        if book == library[x]:
+            print(library[x][0], "by", library[x][1], "has been removed")
+            library.remove(book)
+            found += 1
     if found == 0:
             print("there is not a book in the library that fits your search")
 
@@ -75,7 +77,7 @@ def main():
         remove()
     elif choice == "4":
         for b in range(len(library)):
-            print(library[b][0])
+            print(library[b][0], "by", library[b][1])
     elif choice == "5":
         return "end"
     else:
