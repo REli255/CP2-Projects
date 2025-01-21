@@ -21,12 +21,14 @@ Have at least 2 people test your code before submission!
 
 library = []
 
+# function for adding a book (including title and author)
 def add():
     title = input("enter the title of the book you want to add: ")
     author = input("enter the author of the book you want to add: ")
     book = (title, author)
     library.append(book)
 
+# function for searching the library by title or author
 def search():
     for z in range(1):
         found = 0
@@ -49,6 +51,7 @@ def search():
         if found == 0:
             print("there is not a book in the library that fits your search")
 
+# function for removing a book by the title and author
 def remove():
     title = input("enter the title of the book you want to remove: ")
     author = input("enter the author of the book you want to remove: ")
@@ -62,6 +65,7 @@ def remove():
     if found == 0:
             print("there is not a book in the library that fits your search")
 
+# function with the user interface
 def main():
     choice = input("""1. Add a new book
     2. Search the library
@@ -83,6 +87,7 @@ def main():
     else:
         print("that is not an option")
 
+# loop that makes sure the program continues until the user is done 
 while True:
     end = main()
     if end == "end":
