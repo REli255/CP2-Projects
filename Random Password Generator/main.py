@@ -10,7 +10,7 @@ PROJECT STEPS:
 A main function that runs the code
 Functions for the different password requirements
 A function that assembles that password once it is the correct length
-Users should be able to specify length and if they want to include
+Users should be able to specify length and if they want to include:
     uppercase letters
     lowercase letters
     numbers
@@ -19,5 +19,11 @@ HINT: You can make this by randomly selecting from different lists OR by randoml
 generating the ASCII letters! 
 """
 
+upper_letters = ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
+lower_letters = ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")
+numbers = ("1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
+special_characters = ("!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "`", "~", "[", "]", "{", "}", ";", ":", "'", ",", "<", ".", ">", "/", "?", "|")
+
 def main():
-    pass
+    print("Random Password Generator")
+    length = int(input("enter how many characters do you want to be in the password: "))
