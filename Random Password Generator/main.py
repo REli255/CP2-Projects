@@ -27,46 +27,65 @@ lower_letters = ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 numbers = ("1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
 special_characters = ("!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "`", "~", "[", "]", "{", "}", ";", ":", "'", ",", "<", ".", ">", "/", "?", "|")
 
-# function with the main user interface
-def main():
-    character_types = []
-    print("Random Password Generator")
-    length = int(input("How many characters long do you want the password to be: "))
-    # loop for chosing what characters are included
+character_types = []
+
+# function to decide if lowercase letters are included
+def lower_choices():
     while True:
         lower_choice = input("Would you like lowercase letters to be included in the password: ")
         if lower_choice == "yes" or lower_choice == "Yes" or lower_choice == "YES":
             character_types.append(lower_letters)
+            break
         elif lower_choice == "no" or lower_choice == "No" or lower_choice == "NO":
-            pass
+            break
         else:
             print("that is not an option")
-            continue
+
+# function to decide if uppercase letters are included
+def upper_choices():
+    while True:
         upper_choice = input("Would you like uppercase letters to be included in the password: ")
         if upper_choice == "yes" or upper_choice == "Yes" or upper_choice == "YES":
             character_types.append(upper_letters)
+            break
         elif upper_choice == "no" or upper_choice == "No" or upper_choice == "NO":
-            pass
+            break
         else:
             print("that is not an option")
-            continue
+
+# function to decide if numbers are included
+def numbers_choices():
+    while True:
         numbers_choice = input("Would you like numbers to be included in the password: ")
         if numbers_choice == "yes" or numbers_choice == "Yes" or numbers_choice == "YES":
             character_types.append(numbers)
+            break
         elif numbers_choice == "no" or numbers_choice == "No" or numbers_choice == "NO":
-            pass
+            break
         else:
             print("that is not an option")
-            continue
+
+# function to decide if special chharacters are included
+def special_choices():
+    while True:
         special_choice = input("Would you like special characters to be included in the password: ")
         if special_choice == "yes" or special_choice == "Yes" or special_choice == "YES":
             character_types.append(special_characters)
+            break
         elif special_choice == "no" or special_choice == "No" or special_choice == "NO":
-            pass
+            break
         else:
             print("that is not an option")
-            continue
-        break
+
+# function with the main user interface
+def main():
+    print("Random Password Generator")
+    length = int(input("How many characters long do you want the password to be: "))
+    # section to activate other functions
+    lower_choices()
+    upper_choices()
+    numbers_choices()
+    special_choices()
     # loops to print the 4 password options
     for q in range(4):
         password = ""
@@ -82,6 +101,6 @@ while True:
     main()
     end = input("do you want to make another password: ")
     if end == "yes" or end == "Yes" or end == "YES":
-        pass
+        character_types = []
     elif end == "no" or end == "No" or end == "NO":
         break
