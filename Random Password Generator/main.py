@@ -26,12 +26,10 @@ lower_letters = ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 numbers = ("1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
 special_characters = ("!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "`", "~", "[", "]", "{", "}", ";", ":", "'", ",", "<", ".", ">", "/", "?", "|")
 
-character_types = []
-
-
 def main():
+    character_types = []
     print("Random Password Generator")
-    length = int(input("How many characters long you want the password to be: "))
+    length = int(input("How many characters long do you want the password to be: "))
     while True:
         lower_choice = input("Would you like lowercase letters to be included in the password: ")
         if lower_choice == "yes" or lower_choice == "Yes" or lower_choice == "YES":
@@ -68,6 +66,7 @@ def main():
         break
     for q in range(4):
         password = ""
+        print("option", q + 1, ": ")
         for x in range(length):
             chosen_type = random.choice(character_types)
             chosen_character = random.choice(chosen_type)
