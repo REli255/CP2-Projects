@@ -21,15 +21,18 @@ generating the ASCII letters!
 
 import random
 
+# lists of the different character types
 upper_letters = ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
 lower_letters = ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")
 numbers = ("1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
 special_characters = ("!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "`", "~", "[", "]", "{", "}", ";", ":", "'", ",", "<", ".", ">", "/", "?", "|")
 
+# function with the main user interface
 def main():
     character_types = []
     print("Random Password Generator")
     length = int(input("How many characters long do you want the password to be: "))
+    # loop for chosing what characters are included
     while True:
         lower_choice = input("Would you like lowercase letters to be included in the password: ")
         if lower_choice == "yes" or lower_choice == "Yes" or lower_choice == "YES":
@@ -64,6 +67,7 @@ def main():
             print("that is not an option")
             continue
         break
+    # loops to print the 4 password options
     for q in range(4):
         password = ""
         print("option", q + 1, ": ")
@@ -73,6 +77,7 @@ def main():
             password += chosen_character
         print(password)
 
+# loop that makes sure the program continues until the user is done 
 while True:
     main()
     end = input("do you want to make another password: ")
