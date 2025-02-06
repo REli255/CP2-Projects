@@ -22,6 +22,7 @@ def add():
     pages = input("enter the number of pages in the book you want to add: ")
     book = {"Title": title, "Author": author, "Cover": cover, "Pages": pages}
     library.append(book)
+    print(book["Title"], "by", book["Author"], "has been removed")
 
 # function for searching the library by title, author, type of cover or number of pages
 def search():
@@ -32,25 +33,25 @@ def search():
         if type == "1":
             item = input("enter the title of the book you are searching for: ")
             for x in range(len(library)):
-                if item in library[x][0]:
+                if item == library[x]["Title"]:
                     print(library[x])
                     found += 1
         elif type == "2":
             item = input("enter the author of the book you are searching for: ")
             for x in range(len(library)):
-                if item in library[x][1]:
+                if item == library[x]["Author"]:
                     print(library[x])
                     found += 1
         elif type == "3":
             item = input("enter the type of cover of the book you are searching for: ")
             for x in range(len(library)):
-                if item in library[x][2]:
+                if item == library[x]["Cover"]:
                     print(library[x])
                     found += 1
         elif type == "4":
             item = input("enter the number of pages in the book you are searching for: ")
             for x in range(len(library)):
-                if item in library[x][3]:
+                if item == library[x]["Pages"]:
                     print(library[x])
                     found += 1
         else:
@@ -61,7 +62,24 @@ def search():
 
 # function for editing a book's title, author, type of cover and/or number of pages
 def edit():
-    pass
+    title = input("enter the title of the book you want to edit: ")
+    author = input("enter the author of the book you want to edit: ")
+    cover = input("enter the type of cover of the book you want to edit: ")
+    pages = input("enter the number of pages in the book you want to edit: ")
+    book_search = {"Title": title, "Author": author, "Cover": cover, "Pages": pages}
+    found = 0
+    for x in range(len(library)):
+        if book_search == library[x]:
+            title_edited = input("enter what you want to change the title to: ")
+            author_edited = input("enter what you want to change the author to: ")
+            cover_edited = input("enter what you want to change the type of cover to: ")
+            pages_edited = input("enter what you want to change the number of pages to: ")
+            book_edited = {"Title": title_edited, "Author": author_edited, "Cover": cover_edited, "Pages": pages_edited}
+            library[x] = book_edited
+            found += 1
+            break
+    if found == 0:
+            print("there is not a book in the library that fits your search")
 
 # function for removing a book by the title and author
 def remove():
@@ -73,24 +91,34 @@ def remove():
     found = 0
     for x in range(len(library)):
         if book == library[x]:
-            print(library[x][0], "by", library[x][1], "has been removed")
+            print(library[x]["Title"], "by", library[x]["Author"], "has been removed")
             library.remove(book)
             found += 1
+            break
     if found == 0:
             print("there is not a book in the library that fits your search")
 
 # function to display the books in the library
 def display():
-    for b in range(len(library)):
-            print(library[b][0], "by", library[b][1])
+    amount = input("""1. Title and Author
+    2. All information
+    Enter the number of the thing you would like to do: """)
+    if amount == "1":
+        for b in range(len(library)):
+            print(library[b]["Title"], "by", library[b]["Author"])
+    elif amount == "2":
+        for d in range(len(library)):
+            print(library[d])
+    else:
+        print("that is not an option")
 
 # function with the user interface
 def main():
-    choice = input("""1. Add a new book
+    choice = input("""1. Add a book
     2. Search the library
-    3. Edit a book's information
+    3. Edit a book
     4. Remove a book
-    5. Display library
+    5. Display the library
     6. End
     Enter the number of the thing you would like to do: """)
     if choice == "1":
