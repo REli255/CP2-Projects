@@ -108,7 +108,7 @@ def display():
             print(library[b]["Title"], "by", library[b]["Author"])
     elif amount == "2":
         for d in range(len(library)):
-            print(library[d])
+            print(library[d]["Title"], "by", library[d]["Author"], "is", library[d]["Cover"], "and has", library[d]["Pages"], "pages.")
     else:
         print("that is not an option")
 
