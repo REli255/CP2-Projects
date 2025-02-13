@@ -14,9 +14,9 @@ Create your functions
 """
 
 def saving():
-    goal = int(input("what is the goal you are saving for: "))
-    often = input("how often are you going to deposit (daily, weekly, montly or yearly): ")
-    amount = int(input("how much are you going to deposit each time: "))
+    goal = float(input("what is the goal you are saving for: "))
+    often = input("how often are you going to deposit (daily, weekly, monthly or yearly): ")
+    amount = float(input("how much are you going to deposit each time: "))
     time = goal / amount
     if often == "daily" or often == "Daily":
         print("It would take you", time, "days to save your goal of $", goal)
