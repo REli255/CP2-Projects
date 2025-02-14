@@ -64,45 +64,92 @@ def specific_search():
 def general_search():
     while True:
         found = 0
-        type = input("""do you want to search by 1. title, 2. director, 3. genre, 4. rating, 5. length or 6. notable actors
-                     enter the number of the category you want to search by: """)
-        # conditional that searches the list for movies that fit in the selected catagory
-        if type == "1":
+        options = []
+        type_1 = input("""do you want to search by 1. title, 2. director, 3. genre, 4. rating, 5. length or 6. notable actors
+                     enter the number of the first category you want to search by: """)
+        # conditional that searches the list for movies that fit in the selected catagory(s)
+        if type_1 == "1":
             item = input("enter the title of the movies you are searching for: ")
             for rank in information:
                 if item in rank[0]:
-                    print(rank[0], "directed by", rank[1], "is a", rank[2], "movie. It is rated", rank[3], ",", rank[4], "minutes long and has", rank[5], "in it.")
+                    options.append(rank)
                     found += 1
-        elif type == "2":
+        elif type_1 == "2":
             item = input("enter the director of the movies you are searching for: ")
             for rank in information:
                 if item in rank[1]:
-                    print(rank[0], "directed by", rank[1], "is a", rank[2], "movie. It is rated", rank[3], ",", rank[4], "minutes long and has", rank[5], "in it.")
+                    options.append(rank)
                     found += 1
-        elif type == "3":
+        elif type_1 == "3":
             item = input("enter the genre of the movies you are searching for: ")
             for rank in information:
                 if item in rank[2]:
-                    print(rank[0], "directed by", rank[1], "is a", rank[2], "movie. It is rated", rank[3], ",", rank[4], "minutes long and has", rank[5], "in it.")
+                    options.append(rank)
                     found += 1
-        elif type == "4":
+        elif type_1 == "4":
             item = input("enter the rating of the movies you are searching for: ")
             for rank in information:
                 if item == rank[3]:
-                    print(rank[0], "directed by", rank[1], "is a", rank[2], "movie. It is rated", rank[3], ",", rank[4], "minutes long and has", rank[5], "in it.")
+                    options.append(rank)
                     found += 1
-        elif type == "5":
-            item = input("enter the length (in minutes) of the movies you are searching for: ")
+        elif type_1 == "5":
+            item_min_1 = int(input("enter the length (in minutes) of the movies you are searching for: "))
+            item_max_1 = int(input("enter the length (in minutes) of the movies you are searching for: "))
             for rank in information:
-                if item == rank[4]:
-                    print(rank[0], "directed by", rank[1], "is a", rank[2], "movie. It is rated", rank[3], ",", rank[4], "minutes long and has", rank[5], "in it.")
+                if item_min_1 <= int(rank[4]) and item_max_1 >= int(rank[4]):
+                    options.append(rank)
                     found += 1
-        elif type == "6":
+        elif type_1 == "6":
             item = input("enter the name of a notable actor in the movies you are searching for: ")
             for rank in information:
                 if item in rank[5]:
+                    options.append(rank)
+                    found += 1
+        else:
+            print("that is not an option")
+            continue
+        type_2 = input("""do you want to search by 1. title, 2. director, 3. genre, 4. rating, 5. length, 6. notable actors or 7. no second category
+                     enter the number of the second category you want to search by: """)
+        if type_2 == "1":
+            item = input("enter the title of the movies you are searching for: ")
+            for rank in options:
+                if item in rank[0]:
                     print(rank[0], "directed by", rank[1], "is a", rank[2], "movie. It is rated", rank[3], ",", rank[4], "minutes long and has", rank[5], "in it.")
                     found += 1
+        elif type_2 == "2":
+            item = input("enter the director of the movies you are searching for: ")
+            for rank in options:
+                if item in rank[1]:
+                    print(rank[0], "directed by", rank[1], "is a", rank[2], "movie. It is rated", rank[3], ",", rank[4], "minutes long and has", rank[5], "in it.")
+                    found += 1
+        elif type_2 == "3":
+            item = input("enter the genre of the movies you are searching for: ")
+            for rank in options:
+                if item in rank[2]:
+                    print(rank[0], "directed by", rank[1], "is a", rank[2], "movie. It is rated", rank[3], ",", rank[4], "minutes long and has", rank[5], "in it.")
+                    found += 1
+        elif type_2 == "4":
+            item = input("enter the rating of the movies you are searching for: ")
+            for rank in options:
+                if item == rank[3]:
+                    print(rank[0], "directed by", rank[1], "is a", rank[2], "movie. It is rated", rank[3], ",", rank[4], "minutes long and has", rank[5], "in it.")
+                    found += 1
+        elif type_2 == "5":
+            item_min_2 = int(input("enter the length (in minutes) of the movies you are searching for: "))
+            item_max_2 = int(input("enter the length (in minutes) of the movies you are searching for: "))
+            for rank in options:
+                if item_min_2 <= int(rank[4]) and item_max_2 >= int(rank[4]):
+                    print(rank[0], "directed by", rank[1], "is a", rank[2], "movie. It is rated", rank[3], ",", rank[4], "minutes long and has", rank[5], "in it.")
+                    found += 1
+        elif type_2 == "6":
+            item = input("enter the name of a notable actor in the movies you are searching for: ")
+            for rank in options:
+                if item in rank[5]:
+                    print(rank[0], "directed by", rank[1], "is a", rank[2], "movie. It is rated", rank[3], ",", rank[4], "minutes long and has", rank[5], "in it.")
+                    found += 1
+        elif type_2 == "7":
+            for rank in options:
+                print(rank[0], "directed by", rank[1], "is a", rank[2], "movie. It is rated", rank[3], ",", rank[4], "minutes long and has", rank[5], "in it.")
         else:
             print("that is not an option")
             continue
