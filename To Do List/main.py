@@ -11,11 +11,12 @@ REQUIREMENTS:
     Delete item from to do list
 """
 
-def create():
-    pass
+with open("notes/test.txt", "w") as file:
+    file.write("")
 
 def add():
-    pass
+    with open("notes/user_info.csv", "w", newline="") as file:
+        file.write(input("enter the item you wnt to add to the to do list: "))
 
 def mark():
     pass
@@ -25,24 +26,21 @@ def delete():
 
 # function with the user interface
 def main():
-    choice = input("""1. Add a book
-    2. Search the library
-    3. Edit a book
-    4. Remove a book
-    5. Display the library
-    6. End
+    with open("notes/test.txt") as file:
+        content = file.read()
+        print("your to do list is: \n", content)
+    choice = input("""1. Add items to the to do list
+    2. Mark item as complete
+    3. Delete item from to do list
+    4. End
     Enter the number of the thing you would like to do: """)
     if choice == "1":
         add()
     elif choice == "2":
-        search()
+        mark()
     elif choice == "3":
-        edit()
+        delete()
     elif choice == "4":
-        remove()
-    elif choice == "5":
-        display()
-    elif choice == "6":
         return "end"
     else:
         print("that is not an option")
