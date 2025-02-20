@@ -11,24 +11,46 @@ REQUIREMENTS:
     Delete item from to do list
 """
 
-with open("notes/test.txt", "w") as file:
+information = []
+
+with open("To Do List/to_do_list_1.text", "w") as file:
     file.write("")
 
 def add():
-    with open("notes/user_info.csv", "w", newline="") as file:
-        file.write(input("enter the item you wnt to add to the to do list: "))
+    with open("To Do List/to_do_list_1.text", "a", newline="") as file:
+        file.write(input("enter the item you want to add to the to do list: "))
+        file.write("\n")
 
 def mark():
-    pass
+    found = 0
+    item  = input("enter the item you want to mark as done: ")
+    # loop that check every item in the list to see if it matches
+    for rank in information:
+        if item in rank:
+            rank = rank + " -- completed"
+            found += 1
+    if found == 0:
+        print("there is not an item in the list that fits your search")
+    with open("To Do List/to_do_list_1.text", "w") as file:
+        for rank in information:
+            file.write(rank)
 
 def delete():
-    pass
+    found = 0
+    item  = input("enter the item you want to delete: ")
+    # loop that check every item in the list to see if it matches
+    for rank in information:
+        if item in rank:
+            information.remove(rank)
+            found += 1
+    if found == 0:
+        print("there is not an item in the list that fits your search")
+    with open("To Do List/to_do_list_1.text", "w") as file:
+        for rank in information:
+            file.write(rank)
 
 # function with the user interface
 def main():
-    with open("notes/test.txt") as file:
-        content = file.read()
-        print("your to do list is: \n", content)
     choice = input("""1. Add items to the to do list
     2. Mark item as complete
     3. Delete item from to do list
@@ -48,6 +70,14 @@ def main():
 # loop that makes sure the program continues until the user is done 
 while True:
     end = main()
+    # opens the file and prints the to do list
+    information = []
+    with open("To Do List/to_do_list_1.text") as file:
+        for row in file:
+            information.append(row)
+    print("your to do list is: ")
+    for rank in information:
+        print(rank)
     if end == "end":
         print("thank you for using this program")
         break
