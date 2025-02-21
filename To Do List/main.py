@@ -17,17 +17,18 @@ with open("To Do List/to_do_list_1.text", "w") as file:
     file.write("")
 
 def add():
-    with open("To Do List/to_do_list_1.text", "a", newline="") as file:
+    with open("To Do List/to_do_list_1.text", "a") as file:
         file.write(input("enter the item you want to add to the to do list: "))
+    with open("To Do List/to_do_list_1.text", "a") as file:
         file.write("\n")
 
 def mark():
     found = 0
     item  = input("enter the item you want to mark as done: ")
     # loop that check every item in the list to see if it matches
-    for rank in information:
-        if item in rank:
-            rank = rank + " -- completed"
+    for q in range(len(information)):
+        if item in information[q]:
+            information[q] = information[q] + " -- completed \n"
             found += 1
     if found == 0:
         print("there is not an item in the list that fits your search")
