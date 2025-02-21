@@ -13,15 +13,18 @@ REQUIREMENTS:
 
 information = []
 
+# opens, then clears the to do list file
 with open("To Do List/to_do_list_1.text", "w") as file:
     file.write("")
 
+# fuction that lets the user add items to the list
 def add():
     with open("To Do List/to_do_list_1.text", "a") as file:
         file.write(input("enter the item you want to add to the to do list: "))
     with open("To Do List/to_do_list_1.text", "a") as file:
         file.write("\n")
 
+# fuction that lets the user mark items as done
 def mark():
     found = 0
     item  = input("enter the item you want to mark as done: ")
@@ -36,6 +39,7 @@ def mark():
         for rank in information:
             file.write(rank)
 
+# fuction that lets the user remove items from the list
 def delete():
     found = 0
     item  = input("enter the item you want to delete: ")
