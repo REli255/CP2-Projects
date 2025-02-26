@@ -15,22 +15,29 @@ Uses good naming practices
 Has good white space
 """
 
+with open("Word Counter/first.txt", "w") as file:
+        file.write("")
+with open("Word Counter/second.txt", "w") as file:
+        file.write("")
+#with open("Word Counter/third.txt", "w") as file:
+#        file.write("")
+
 from file_handling import *
-from word_counter import counter
+from time_handling import timestamp
 
 # function with the user interface
 def main():
-    choice = input("""1. make a new file
-    2. add to anold file
-    3. Chck the word count of a file
+    choice = input("""1. Add to a file
+    2. Display a file
+    3. Check the word count of a file
     4. End
     Enter the number of the thing you would like to do: """)
     if choice == "1":
-        make_new()
+        add_to_file()
     elif choice == "2":
-        add_to_old()
+        display_file()
     elif choice == "3":
-        counter()
+        timestamp()
     elif choice == "4":
         return "end"
     else:
