@@ -13,4 +13,7 @@ def timestamp():
     number_of_words = counter(chosen_file)
     time = clock()
     with open(chosen_file, "a") as text_file:
-        text_file.write(input("Enter what you want to add to the text file: "))
+        text_file.write("word count equaled")
+        text_file.write(number_of_words)
+        text_file.write("at")
+        text_file.write(time)
