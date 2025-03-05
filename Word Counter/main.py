@@ -15,13 +15,6 @@ Uses good naming practices
 Has good white space
 """
 
-with open("Word Counter/first.txt", "w") as file:
-        file.write("")
-with open("Word Counter/second.txt", "w") as file:
-        file.write("")
-#with open("Word Counter/third.txt", "w") as file:
-#        file.write("")
-
 from file_handling import *
 from time_handling import timestamp
 

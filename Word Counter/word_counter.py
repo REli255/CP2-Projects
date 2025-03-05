@@ -8,4 +8,4 @@ def counter(chosen_file):
         for word in lines:
             words += 1
     print(words)
-    return (words)
+    return (str(words))
