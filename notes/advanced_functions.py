@@ -34,6 +34,7 @@ added(3)
     # to keep it safe from other code
 # What is a closure function?
     # a function that lets you rmember values across multiple calls
+# Why do we write closure functions?
 def add(a):
     b = input("give me a number")
     def addition():
@@ -41,9 +42,3 @@ def add(a):
     return addition()
 base = add(10)
 print(base(5))
-
-# Why do we write closure functions?
-    # 
-# What is recursion?
-    # when you call a function inside itself.
-# How does recursion work?
