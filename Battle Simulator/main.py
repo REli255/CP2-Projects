@@ -58,7 +58,7 @@ def main():
     if choice == "1":
         health, strength, speed, defense, xp = character_selection()
     elif choice == "2":
-        health, strength, speed, defense, xp = battle_simulator(health, strength, speed, defense, xp)
+        health, strength, speed, defense, xp = battle_simulator(float(health), float(strength), float(speed), float(defense), float(xp))
     elif choice == "3":
         return "end"
     else:

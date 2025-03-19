@@ -86,30 +86,33 @@ def character_creator():
 
 # function that lets the user choose what character they want to use
 def existing_character():
-    chosen_name = input("enter the name of the character you want to use: ")
+    while True:
+        chosen_name = input("enter the name of the character you want to use: ")
 
-    found = 0
-    with open("Battle Simulator/monsters.csv", "r") as file:
-        reader = csv.reader(file)
-        for row in reader:
-            if row[0] == chosen_name:
-                chosen_character = row
-                found += 1
-    if found < 0:
-        print("no character with that name was found.")
-        character_selection()
-    else:
-        name = chosen_character[0]
-        race = chosen_character[1]
-        job = chosen_character[2]
-        health = chosen_character[3]
-        strength = chosen_character[4]
-        speed = chosen_character[5]
-        defense = chosen_character[6]
-        xp = chosen_character[7]
+        found = 0
+        if found == 0:
+            with open("Battle Simulator/characters.csv", "r", newline="") as file:
+                reader = csv.reader(file)
+                for row in reader:
+                    if row[0] == chosen_name:
+                        chosen_character = row
+                        found += 1
 
-    print(name, "is a", race, job, "with", health, "health,", strength, "strength,", speed, "speed and", defense, "defense")
-    return health, strength, speed, defense, xp
+        if found == 0:
+            print("no character with that name was found.")
+            continue
+        else:
+            name = chosen_character[0]
+            race = chosen_character[1]
+            job = chosen_character[2]
+            health = chosen_character[3]
+            strength = chosen_character[4]
+            speed = chosen_character[5]
+            defense = chosen_character[6]
+            xp = chosen_character[7]
+
+        print(name, "is a", race, job, "with", health, "health,", strength, "strength,", speed, "speed,", defense, "defense and", xp, "xp")
+        return health, strength, speed, defense, xp
 
 # function that lets the user chose what type of character they want
 def character_selection():
