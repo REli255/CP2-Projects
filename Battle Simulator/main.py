@@ -44,13 +44,14 @@ Test your program thoroughly to ensure all features work as expected
 from Character_Management import character_selection
 from Battle_System import battle_simulator
 
+chosen = 0
+
 # function with the user interface
-def main():
-    chosen = 0
+def main(chosen):
     if chosen == 0:
         health, strength, speed, defense, xp = character_selection()
         chosen += 76
-    
+
     choice = input("""1. Select a diferent character
     2. Battle a monster
     3. End
@@ -66,7 +67,8 @@ def main():
 
 # loop that makes sure the program continues until the user is done 
 while True:
-    end = main()
+    end = main(chosen)
+    chosen = 56
     if end == "end":
         print("thank you for using this program")
         break

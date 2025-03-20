@@ -127,4 +127,5 @@ def character_selection():
         return health, strength, speed, defense, xp
     else:
         print("that is not an option")
-        character_selection()
+        health, strength, speed, defense, xp = character_selection()
+        return health, strength, speed, defense, xp
