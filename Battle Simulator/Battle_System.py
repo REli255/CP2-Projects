@@ -54,6 +54,9 @@ def battle_simulator(health_c, strength_c, speed_c, defense_c, xp_c):
             print("you take", player_damage, "damage and the", name_m, "takes", monster_damage, "damage")
         else:
             print("that is not an option")
+            continue
+        health_c -= player_damage
+        health_m -= monster_damage
     
     if health_m <= 0.0:
         xp_c += 10
