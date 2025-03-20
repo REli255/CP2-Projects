@@ -24,7 +24,7 @@ def monster_selector(xp_c):
     return name, health, strength, speed, defense
 
 # function that makes the battles happen
-def battle_simulator(health_c, strength_c, speed_c, defense_c, xp_c):
+def battle_simulator(name_c, race_c, job_c, health_c, strength_c, speed_c, defense_c, xp_c):
     name_m, health_m, strength_m, speed_m, defense_m = monster_selector(xp_c)
     print("you will fight the", name_m)
 
@@ -64,5 +64,8 @@ def battle_simulator(health_c, strength_c, speed_c, defense_c, xp_c):
     elif health_c <= 0.0:
         xp_c -= 15
         ("the", name_m, "won and you lost 15 xp")
+    with open("Battle Simulator/characters.csv", "a", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow([name_c, race_c, job_c, health_c, strength_c, speed_c, defense_c, xp_c])
     
     return health_c, strength_c, speed_c, defense_c, xp_c

@@ -49,7 +49,7 @@ chosen = 0
 # function with the user interface
 def main(chosen):
     if chosen == 0:
-        health, strength, speed, defense, xp = character_selection()
+        name, race, job, health, strength, speed, defense, xp = character_selection()
         chosen += 76
 
     choice = input("""1. Select a diferent character
@@ -57,9 +57,9 @@ def main(chosen):
     3. End
     Enter the number of the thing you would like to do: """)
     if choice == "1":
-        health, strength, speed, defense, xp = character_selection()
+        name, race, job, health, strength, speed, defense, xp = character_selection()
     elif choice == "2":
-        health, strength, speed, defense, xp = battle_simulator(float(health), float(strength), float(speed), float(defense), float(xp))
+        health, strength, speed, defense, xp = battle_simulator(name, race, job, float(health), float(strength), float(speed), float(defense), float(xp))
     elif choice == "3":
         return "end"
     else:

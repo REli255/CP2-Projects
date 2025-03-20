@@ -82,7 +82,7 @@ def character_creator():
     with open("Battle Simulator/characters.csv", "a", newline="") as file:
         writer = csv.writer(file)
         writer.writerow([name, race, job, health, strength, speed, defense, xp])
-    return health, strength, speed, defense, xp
+    return name, race, job, health, strength, speed, defense, xp
 
 # function that lets the user choose what character they want to use
 def existing_character():
@@ -112,7 +112,7 @@ def existing_character():
             xp = chosen_character[7]
 
         print(name, "is a", race, job, "with", health, "health,", strength, "strength,", speed, "speed,", defense, "defense and", xp, "xp")
-        return health, strength, speed, defense, xp
+        return name, race, job, health, strength, speed, defense, xp
 
 # function that lets the user chose what type of character they want
 def character_selection():
@@ -120,12 +120,12 @@ def character_selection():
     2. Choose an existing character
     Enter the number of the thing you would like to do: """)
     if choice == "1":
-        health, strength, speed, defense, xp = character_creator()
-        return health, strength, speed, defense, xp
+        name, race, job, health, strength, speed, defense, xp = character_creator()
+        return name, race, job, health, strength, speed, defense, xp
     elif choice == "2":
-        health, strength, speed, defense, xp = existing_character()
-        return health, strength, speed, defense, xp
+        name, race, job, health, strength, speed, defense, xp = existing_character()
+        return name, race, job, health, strength, speed, defense, xp
     else:
         print("that is not an option")
-        health, strength, speed, defense, xp = character_selection()
-        return health, strength, speed, defense, xp
+        name, race, job, health, strength, speed, defense, xp = character_selection()
+        return name, race, job, health, strength, speed, defense, xp
