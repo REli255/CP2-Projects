@@ -2,41 +2,41 @@
 
 """
 OVERVIEW:
-Create a program that allows users to create, manage, and battle RPG characters.
-The program should use inner and helper functions to organize the code
-efficiently. Characters should be saved to and loaded from a CSV file.
+Enhance your existing RPG Character Creator and Battle Simulator by incorporating
+data visualization, statistical analysis, and random data generation using Python
+libraries. This project will focus on reading and implementing features from library
+documentation.
 
 REQUIREMENTS:
-Character Creation and Management:
-Create new characters with attributes (name, health, strength, defense,
-speed)
-Save characters to a CSV file
-Load characters from a CSV file
-Display character information
 
-Battle System:
-Implement a turn-based battle system between two characters
-Calculate damage based on character attributes
-Include a simple leveling system where characters gain experience after
-battles
+Library Integration:
+Use Matplotlib for character stat visualizations
+Use Pandas for data manipulation and basic statistical analysis
+Use Faker for generating random character names and descriptions
 
-Program Structure:
-Use inner functions for main features (character creation, battle system,
-menu)
-Implement helper functions for repetitive tasks (save/load, display
-character info)
-Create a main menu for user interaction
+Character Visualization:
+Create a radar chart or bar graph to display a character's stats using Matplotlib
 
-File Operations:
-Save character data to a CSV file
-Load character data from a CSV file
+Data Analysis:
+Use Pandas to load character data into a DataFrame
+Implement basic statistical analysis on character attributes (e.g., mean, median,
+max, min)
+
+Random Generation:
+Use Faker to generate random character names and backstories
+
+Enhanced User Interface:
+Create a menu system that allows users to access new visualization and
+analysis features
+
+Documentation Reading:
+Demonstrate understanding of library documentation by implementing at least
+one additional feature from each library not explicitly required above
 
 NOTES:
-Focus on using inner and helper functions to organize your code
-Ensure your program handles potential errors (e.g., file not found, invalid user
-input)
-Comment your code to explain the purpose of each function and any complex
-logic
+Focus on reading and understanding the documentation for each library
+Ensure your program handles potential errors (e.g., file not found, invalid user input)
+Comment your code to explain the purpose of each function and any complex logic
 Test your program thoroughly to ensure all features work as expected
 """
 
