@@ -105,12 +105,14 @@ def existing_character():
             name = chosen_character[0]
             race = chosen_character[1]
             job = chosen_character[2]
-            health = chosen_character[3]
-            strength = chosen_character[4]
-            speed = chosen_character[5]
-            defense = chosen_character[6]
-            xp = chosen_character[7]
+            health = float(chosen_character[3].strip())  
+            strength = float(chosen_character[4].strip())  
+            speed = float(chosen_character[5].strip())  
+            defense = float(chosen_character[6].strip())  
+            xp = float(chosen_character[7].strip())  
+ 
 
+        print("Chosen character data:", chosen_character)
         print(name, "is a", race, job, "with", health, "health,", strength, "strength,", speed, "speed,", defense, "defense and", xp, "xp")
         return name, race, job, health, strength, speed, defense, xp
 

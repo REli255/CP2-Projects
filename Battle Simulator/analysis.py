@@ -2,15 +2,14 @@ import pandas as pd
 
 # function to do statistical analysis of character stats
 def statistical_analysis(name, race, job, health, strength, speed, defense, xp):
-    name
-    data = {
-            'Name' : name,
-            'Health': health,
-            'Strength': strength,
-            'Speed': speed,
-            'Defense': defense,
-            'XP': xp
-            }
+    data = {  
+        'Health': [health],      
+        'Strength': [strength],   
+        'Speed': [speed],         
+        'Defense': [defense],     
+        'XP': [xp]               
+        }  
+
     
     df = pd.DataFrame(data)
     print("Character Data:")
@@ -22,4 +21,4 @@ def statistical_analysis(name, race, job, health, strength, speed, defense, xp):
     print(f"\nMax:\n{df.max()}")
     print(f"\nMin:\n{df.min()}")
 
-    return  name, race, job, health, strength, speed, defense, xp
+    return  str(name), str(race), str(job), int(health), int(strength), int(speed), int(defense), str(xp)
