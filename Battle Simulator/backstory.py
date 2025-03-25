@@ -1,26 +1,29 @@
 from faker import Faker
 import random
 
-# Step 1: Create a Faker instance
 fake = Faker()
 
-# Step 2: Define a function to generate a character with a backstory
-def generate_character():
-    name = fake.name()  # Generate a random name
-    age = random.randint(18, 60)  # Generate a random age
-    backstory = fake.paragraph(nb_sentences=3)  # Generate a random backstory
-    return {
-        'name': name,
-        'age': age,
-        'backstory': backstory
-    }
+# Lists of possible places, powers, and weaknesses
+place_list = ["dark forest", "abandoned castle", "cave", "swamp", "mountain peak", "haunted village"]
+powers_list = ["fire breath", "invisibility", "super strength", "mind control", "necromancy", "shape-shifting"]
+weaknesses_list = ["silver", "holy water", "sunlight", "magic spells", "pure iron", "the sound of a bell"]
 
-# Step 3: Generate multiple characters
-num_characters = 5  # Change this to generate more or fewer characters
-characters = [generate_character() for _ in range(num_characters)]
+# Function to generate a backstory
+def generate_backstory(species):
+    name = fake.name()
+    age = random.randint(1, 1000)
+    habitat = random.choice(place_list)
+    powers = random.sample(powers_list, 2)
+    weaknesses = random.sample(weaknesses_list, 1)
+    city = fake.city()
+    event_date = fake.date_between(start_date='-1000d', end_date='-1d')
 
-# Step 4: Print the characters
-for character in characters:
-    print(f"Name: {character['name']}")
-    print(f"Age: {character['age']}")
-    print(f"Backstory: {character['backstory']}\n")
+    backstory = (
+        f"{name}, the {species}, has roamed the {habitat} for over {age} years. "
+        f"Gifted with {', '.join(powers)}, they strike fear into the hearts of adventurers. "
+        f"However, they are vulnerable to {', '.join(weaknesses)}. "
+        f"Legends say that {name} was once a guardian of the realm of {city}, twisted by betrayal and dark magic "
+        f"after the fateful event on {event_date}. "
+        f"Now, they haunt the shadows, waiting for the day when they can reclaim their lost honor."
+    )
+    return backstory

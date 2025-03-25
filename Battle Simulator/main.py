@@ -43,6 +43,8 @@ Test your program thoroughly to ensure all features work as expected
 # statments to import the funtions from other pages
 from Character_Management import character_selection
 from Battle_System import battle_simulator
+from visualizations import *
+from analysis import *
 
 chosen = 0
 
@@ -54,13 +56,19 @@ def main(chosen):
 
     choice = input("""1. Select a diferent character
     2. Battle a monster
-    3. End
+    3. Show a bar graph of your characters stats
+    4. Do statistical analysis of character stats
+    5. End
     Enter the number of the thing you would like to do: """)
     if choice == "1":
         name, race, job, health, strength, speed, defense, xp = character_selection()
     elif choice == "2":
-        health, strength, speed, defense, xp = battle_simulator(name, race, job, float(health), float(strength), float(speed), float(defense), float(xp))
+        name, race, job, health, strength, speed, defense, xp = battle_simulator(name, race, job, float(health), float(strength), float(speed), float(defense), float(xp))
     elif choice == "3":
+        name, race, job, health, strength, speed, defense, xp = bar_graph(name, race, job, health, strength, speed, defense, xp)
+    elif choice == "4":
+        name, race, job, health, strength, speed, defense, xp = statistical_analysis(name, race, job, health, strength, speed, defense, xp)
+    elif choice == "5":
         return "end"
     else:
         print("that is not an option")

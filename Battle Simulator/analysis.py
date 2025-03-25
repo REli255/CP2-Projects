@@ -1,25 +1,25 @@
 import pandas as pd
-import random
 
-# Step 1: Generate sample character data
-data = {
-    'Name': [f'Character {i}' for i in range(1, 11)],
-    'Strength': [random.randint(50, 100) for _ in range(10)],
-    'Agility': [random.randint(50, 100) for _ in range(10)],
-    'Intelligence': [random.randint(50, 100) for _ in range(10)],
-    'Endurance': [random.randint(50, 100) for _ in range(10)],
-}
+# function to do statistical analysis of character stats
+def statistical_analysis(name, race, job, health, strength, speed, defense, xp):
+    name
+    data = {
+            'Name' : name,
+            'Health': health,
+            'Strength': strength,
+            'Speed': speed,
+            'Defense': defense,
+            'XP': xp
+            }
+    
+    df = pd.DataFrame(data)
+    print("Character Data:")
+    print(df)
+    
+    print("\nStatistical Analysis:")
+    print(f"Mean:\n{df.mean()}")
+    print(f"\nMedian:\n{df.median()}")
+    print(f"\nMax:\n{df.max()}")
+    print(f"\nMin:\n{df.min()}")
 
-# Step 2: Create a DataFrame
-df = pd.DataFrame(data)
-
-# Step 3: Display the DataFrame
-print("Character Data:")
-print(df)
-
-# Step 4: Perform basic statistical analysis
-print("\nStatistical Analysis:")
-print(f"Mean:\n{df.mean()}")
-print(f"\nMedian:\n{df.median()}")
-print(f"\nMax:\n{df.max()}")
-print(f"\nMin:\n{df.min()}")
+    return  name, race, job, health, strength, speed, defense, xp

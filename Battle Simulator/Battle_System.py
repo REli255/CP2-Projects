@@ -1,5 +1,7 @@
 # Eli Robison, Battle System
 
+from backstory import generate_backstory
+
 # statments to make csv files usable and help make random chocies
 import csv
 import random
@@ -21,12 +23,15 @@ def monster_selector(xp_c):
     speed = float(chosen_monster[3])
     defense = float(chosen_monster[4])
 
-    return name, health, strength, speed, defense
+    backstory = generate_backstory(name)
+
+    return name, health, strength, speed, defense, backstory
 
 # function that makes the battles happen
 def battle_simulator(name_c, race_c, job_c, health_c, strength_c, speed_c, defense_c, xp_c):
-    name_m, health_m, strength_m, speed_m, defense_m = monster_selector(xp_c)
+    name_m, health_m, strength_m, speed_m, defense_m, backstory = monster_selector(xp_c)
     print("you will fight the", name_m)
+    print(backstory)
 
     options = ["Attack", "Defend"]
     while health_c > 0.0 and health_m > 0.0:
@@ -68,4 +73,4 @@ def battle_simulator(name_c, race_c, job_c, health_c, strength_c, speed_c, defen
         writer = csv.writer(file)
         writer.writerow([name_c, race_c, job_c, health_c, strength_c, speed_c, defense_c, xp_c])
     
-    return health_c, strength_c, speed_c, defense_c, xp_c
+    return name_c, race_c, job_c, health_c, strength_c, speed_c, defense_c, xp_c
