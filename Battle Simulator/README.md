@@ -6,7 +6,7 @@ The porpose of this project is to let the user make and save characters. Then fi
 
 ## Execution and Usage
 ---
-The main function makes you make or choose a character. Then 
+The main function makes the user make or choose a character. Then the user choses what to do next (chosing a different character, battle a monster, creat a graph or statistical analisis). In a battle the user will chose to attack or defend.
 [image](relative path to the image NOTE: Image has to be saved in the repository REMINDER: Show what the project looks like when beeing run.)
 
 ## Used Technologies
@@ -31,4 +31,4 @@ The main function makes you make or choose a character. Then
 
 ## Author's Information
 ---
-Short paragraph about you
+I am Eli Robison. I have taken one coding class and am in the middle of another. I made this program for that class.
