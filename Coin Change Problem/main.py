@@ -49,9 +49,11 @@ logic.
 Test your program thoroughly to ensure all features work as expected.
 """
 
+from coin_change_manager import *
+
 # function with the user interface
 def main():
-    currency = input("""1. US Dollar ($)us dollar
+    currency = input("""1. US Dollar ($)
     2. Canadian Dollar (CA$)
     3. British Pound (£)
     4. Europian Euro (€)
