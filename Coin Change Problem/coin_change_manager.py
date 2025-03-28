@@ -1,61 +1,54 @@
 # Eli Robison, Coin Change Manager
 
+import csv
+
 def us_dollar():
-    num_100_euro = 0
-    num_50_euro = 0
-    num_20_euro = 0
-    num_10_euro = 0
-    num_5_euro = 0
-    num_2_euro = 0
-    num_1_euro = 0
-    num_50_cent = 0
-    num_20_cent = 0
-    num_10_cent = 0
-    num_5_cent = 0
-    num_2_cent = 0
-    num_1_cent = 0
+    types = {}
+
+    with open("Coin Change Problem/US_Dollar_($).csv") as file:
+        reader = csv.reader(file)
+        next(reader)
+        for row in reader:
+            types.update({row[0]:row[1]})
 
 def ca_dollar():
-    num_100_euro = 0
-    num_50_euro = 0
-    num_20_euro = 0
-    num_10_euro = 0
-    num_5_euro = 0
-    num_2_euro = 0
-    num_1_euro = 0
-    num_50_cent = 0
-    num_20_cent = 0
-    num_10_cent = 0
-    num_5_cent = 0
-    num_2_cent = 0
-    num_1_cent = 0
+    types = {}
+
+    with open("Coin Change Problem/Canadian_Dollar_(CA$).csv") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            types.update({row[0]:row[1]})
 
 def pound():
-    num_50_euro = 0
-    num_20_euro = 0
-    num_10_euro = 0
-    num_5_euro = 0
-    num_2_euro = 0
-    num_1_euro = 0
-    num_50_cent = 0
-    num_20_cent = 0
-    num_10_cent = 0
-    num_5_cent = 0
-    num_2_cent = 0
-    num_1_cent = 0
+    types = {}
+
+    with open("Coin Change Problem/British_Pound_(£).csv") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            types.update({row[0]:row[1]})
 
 def euro():
-    num_200_euro = 0
-    num_100_euro = 0
-    num_50_euro = 0
-    num_20_euro = 0
-    num_10_euro = 0
-    num_5_euro = 0
-    num_2_euro = 0
-    num_1_euro = 0
-    num_50_cent = 0
-    num_20_cent = 0
-    num_10_cent = 0
-    num_5_cent = 0
-    num_2_cent = 0
-    num_1_cent = 0
+    types = {}
+
+    with open("Coin Change Problem/Europian Euro (€).csv") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            types.update({row[0]:row[1]})
+
+def coin_changer():
+    try:
+        target = float(input())
+    except:
+        print("you must to enter a number")
+        coin_changer()
+    
+    target = round(target, 2)
+
+    if currency == "1":
+        us_dollar(target)
+    elif currency == "2":
+        ca_dollar(target)
+    elif currency == "3":
+        pound(target)
+    elif currency == "4":
+        euro(target)

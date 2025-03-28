@@ -49,27 +49,15 @@ logic.
 Test your program thoroughly to ensure all features work as expected.
 """
 
-from coin_change_manager import *
+from coin_change_manager import coin_changer
 
 # function with the user interface
 def main():
-    currency = input("""1. US Dollar ($)
-    2. Canadian Dollar (CA$)
-    3. British Pound (£)
-    4. Europian Euro (€)
-    Enter the number of the type of money you would like to use: """)
-
     choice = input("""1. Get change for a amount of money
     2. End
     Enter the number of the thing you would like to do: """)
-    if choice == "1" and currency == "1":
-        ()
-    elif choice == "1" and currency == "2":
-        ()
-    elif choice == "1" and currency == "3":
-        ()
-    elif choice == "1" and currency == "4":
-        ()
+    if choice == "1":
+        coin_changer()
     elif choice == "2":
         return "end"
     else:
