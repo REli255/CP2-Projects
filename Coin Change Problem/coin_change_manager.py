@@ -1,7 +1,9 @@
 # Eli Robison, Coin Change Manager
 
+# statment to let csv files work
 import csv
 
+# function that reads the csv file about the us dollar
 def us_dollar():
     types = []
 
@@ -13,6 +15,7 @@ def us_dollar():
     
     calculate_answer(types)
 
+# function that reads the csv file about the canadian dollar
 def ca_dollar():
     types = []
 
@@ -23,6 +26,7 @@ def ca_dollar():
     
     calculate_answer(types)
 
+# function that reads the csv file about the british pound
 def pound():
     types = []
 
@@ -33,6 +37,7 @@ def pound():
     
     calculate_answer(types)
 
+# function that reads the csv file about the european euro
 def euro():
     types = []
 
@@ -43,6 +48,7 @@ def euro():
     
     calculate_answer(types)
 
+# function that does the calculations
 def calculate_answer(types):
     try:
         target = float(input("enter the number you want used for the problem: "))
@@ -61,6 +67,7 @@ def calculate_answer(types):
             print(amount, item[0])
     print("to reach the target.")
 
+# function that lets the user choose a currency
 def coin_changer():
     currency = input("""1. US Dollar ($)us dollar
     2. Canadian Dollar (CA$)
