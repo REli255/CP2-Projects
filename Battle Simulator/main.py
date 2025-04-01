@@ -82,7 +82,7 @@ def main(chosen, name, race, job, health, strength, speed, defense, xp):
         generated_backstory = generate_backstory(race)
         print(generated_backstory)
     elif choice == "6":
-        return "end"
+        return ("end"), str(name), str(race), str(job), int(health), int(strength), int(speed), int(defense), str(xp)
     else:
         print("that is not an option")
     
