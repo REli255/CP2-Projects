@@ -2,14 +2,10 @@ import pandas as pd
 
 # function to do statistical analysis of character stats
 def statistical_analysis(name, race, job, health, strength, speed, defense, xp):
+    stats = [health, strength, speed, defense, xp]
     data = {  
-        'Health': [health],      
-        'Strength': [strength],   
-        'Speed': [speed],         
-        'Defense': [defense],     
-        'XP': [xp]               
-        }  
-
+        'Stats': stats
+        }
     
     df = pd.DataFrame(data)
     print("Character Data:")

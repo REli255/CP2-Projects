@@ -49,6 +49,7 @@ logic.
 Test your program thoroughly to ensure all features work as expected.
 """
 
+# statement to import a function
 from coin_change_manager import coin_changer
 
 # function with the user interface
