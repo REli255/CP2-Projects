@@ -62,10 +62,12 @@ def calculate_answer(types):
     print("it will take: ")
     for item in types:
         value = float(item[1])
-        if target >= value:
+        if target >= 0:
             amount = math.floor(target/value)
-            target -= value*amount
-            print(amount, item[0])
+        else:
+            amount = math.ceil(target/value)
+        target -= value*amount
+        print(amount, item[0])
     print("to reach the target.")
 
 # function that lets the user choose a currency
