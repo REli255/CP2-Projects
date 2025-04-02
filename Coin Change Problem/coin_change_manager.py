@@ -1,13 +1,14 @@
 # Eli Robison, Coin Change Manager
 
-# statment to let csv files work
+# statments to let csv files work and round numbers
 import csv
+import math  
 
 # function that reads the csv file about the us dollar
 def us_dollar():
     types = []
 
-    with open("Coin Change Problem/US_Dollar_($).csv") as file:
+    with open("Coin Change Problem/US_Dollar_($).csv", encoding='utf-8') as file:
         reader = csv.reader(file)
         next(reader)
         for row in reader:
@@ -19,7 +20,7 @@ def us_dollar():
 def ca_dollar():
     types = []
 
-    with open("Coin Change Problem/Canadian_Dollar_(CA$).csv") as file:
+    with open("Coin Change Problem/Canadian_Dollar_(CA$).csv", encoding='utf-8') as file:
         reader = csv.reader(file)
         for row in reader:
             types.append([row[0], float(row[1])])
@@ -30,7 +31,7 @@ def ca_dollar():
 def pound():
     types = []
 
-    with open("Coin Change Problem/British_Pound_(£).csv") as file:
+    with open("Coin Change Problem/British_Pound_(£).csv", encoding='utf-8') as file:
         reader = csv.reader(file)
         for row in reader:
             types.append([row[0], float(row[1])])
@@ -41,7 +42,7 @@ def pound():
 def euro():
     types = []
 
-    with open("Coin Change Problem/Europian Euro (€).csv") as file:
+    with open("Coin Change Problem/Europian Euro (€).csv", encoding='utf-8') as file:
         reader = csv.reader(file)
         for row in reader:
             types.append([row[0], float(row[1])])
@@ -62,7 +63,7 @@ def calculate_answer(types):
     for item in types:
         value = float(item[1])
         if target >= value:
-            amount = round(target/value)
+            amount = math.floor(target/value)
             target -= value*amount
             print(amount, item[0])
     print("to reach the target.")
