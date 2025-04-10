@@ -19,11 +19,11 @@ def generate_backstory(species):
     event_date = fake.date_between(start_date='-1000d', end_date='-1d')
 
     backstory = (
-        f"{name}, the {species}, has roamed the {habitat} for over {age} years. \n"
-        f"Gifted with {', '.join(powers)}, they strike fear into the hearts of adventurers. \n"
-        f"However, they are vulnerable to {', '.join(weaknesses)}. \n"
-        f"Legends say that {name} was once a guardian of the realm of {city}, twisted by betrayal and dark magic \n"
-        f"after the fateful event on {event_date}. \n"
-        f"Now, they haunt the shadows, waiting for the day when they can reclaim their lost honor.\n"
+        f"{name}, the {species}, has roamed the {habitat} for over {age} years. "
+        f"Gifted with {', '.join(powers)}, they strike fear into the hearts of adventurers. "
+        f"However, they are vulnerable to {', '.join(weaknesses)}. "
+        f"Legends say that {name} was once a guardian of the realm of {city}, twisted by betrayal and dark magic "
+        f"after the fateful event on {event_date}. "
+        f"Now, they haunt the shadows, waiting for the day when they can reclaim their lost honor."
     )
     return backstory
