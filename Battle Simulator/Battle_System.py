@@ -1,5 +1,6 @@
 # Eli Robison, Battle System
 
+# statements to import functions
 from backstory import generate_backstory
 from visualizations import pie_chart
 

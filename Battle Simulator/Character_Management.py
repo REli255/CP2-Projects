@@ -113,7 +113,10 @@ def existing_character():
  
 
         print("Chosen character data:", chosen_character)
-        print(name, "is a", race, job, "with", health, "health,", strength, "strength,", speed, "speed,", defense, "defense and", xp, "xp")
+        if len(chosen_character) < 9:
+            print(name, "is a", race, job, "with", health, "health,", strength, "strength,", speed, "speed,", defense, "defense and", xp, "xp.")
+        else:
+            print(name, "is a", race, job, "with", health, "health,", strength, "strength,", speed, "speed,", defense, "defense and", xp, "xp. Their backstory is '", chosen_character[8], "'")
         return name, race, job, health, strength, speed, defense, xp
 
 # function that lets the user chose what type of character they want

@@ -47,6 +47,9 @@ from visualizations import *
 from analysis import *
 from backstory import *
 
+# statment to make csv files usable
+import csv
+
 chosen = 0
 name =  ""
 race =  ""
@@ -80,13 +83,16 @@ def main(chosen, name, race, job, health, strength, speed, defense, xp):
         name, race, job, health, strength, speed, defense, xp = statistical_analysis(name, race, job, health, strength, speed, defense, xp)
     elif choice == "5":
         generated_backstory = generate_backstory(race)
+        with open("Battle Simulator/characters.csv", "a", newline="") as file:
+            writer = csv.writer(file)
+            writer.writerow([name, race, job, health, strength, speed, defense, xp, generated_backstory])
         print(generated_backstory)
     elif choice == "6":
-        return ("end"), str(name), str(race), str(job), int(health), int(strength), int(speed), int(defense), str(xp)
+        return ("end"), str(name), str(race), str(job), float(health), int(strength), int(speed), float(defense), int(xp)
     else:
         print("that is not an option")
     
-    return ("not yet"), str(name), str(race), str(job), int(health), int(strength), int(speed), int(defense), str(xp)
+    return ("not yet"), str(name), str(race), str(job), float(health), int(strength), int(speed), float(defense), int(xp)
 
 # loop that makes sure the program continues until the user is done 
 while True:
