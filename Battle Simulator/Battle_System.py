@@ -1,6 +1,8 @@
 # Eli Robison, Battle System
 
+# statements to import functions
 from backstory import generate_backstory
+from visualizations import pie_chart
 
 # statments to make csv files usable and help make random chocies
 import csv
@@ -24,6 +26,8 @@ def monster_selector(xp_c):
     defense = float(chosen_monster[4])
 
     backstory = generate_backstory(name)
+
+    pie_chart(health, strength, speed, defense)
 
     return name, health, strength, speed, defense, backstory
 

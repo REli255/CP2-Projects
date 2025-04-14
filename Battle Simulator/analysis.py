@@ -17,4 +17,4 @@ def statistical_analysis(name, race, job, health, strength, speed, defense, xp):
     print(f"\nMax:\n{df.max()}")
     print(f"\nMin:\n{df.min()}")
 
-    return  str(name), str(race), str(job), int(health), int(strength), int(speed), int(defense), str(xp)
+    return  str(name), str(race), str(job), float(health), int(strength), int(speed), float(defense), int(xp)
