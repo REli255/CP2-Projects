@@ -1,7 +1,7 @@
 # Eli Robison, the calculator menus
 
 
-# statement to import a function
+# statements to import functions
 from two_D_calculator import *
 from three_D_calculator import *
 

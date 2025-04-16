@@ -17,7 +17,25 @@ class square(rectangle):
         pass
 
 def rectangles():
-    pass
+    choice = input("is it 1. just a rectngle or 2. a square (enter the number next to the option you want): ")
+    if choice == "1":
+        try:
+            length = float(input("enter the length of the rectangle: "))
+            height = float(input("enter the height of the rectangle: "))
+        except:
+            print("you must enter a number")
+    
+        shape = ()
+    elif choice == "2":
+        try:
+            length = float(input("enter the length of the rectangle: "))
+            height = float(input("enter the height of the rectangle: "))
+        except:
+            print("you must enter a number")
+    
+        shape = ()
+    else:
+        print("that is not an option")
 
 class circle:
     def __init__(self):
@@ -28,7 +46,12 @@ class circle:
         pass
 
 def circles():
-    pass
+    try:
+        radius = float(input("enter the radius of the triangle: "))
+    except:
+        print("you must enter a number")
+    
+    shape = ()
 
 class triangle:
     def __init__(self):
@@ -39,4 +62,10 @@ class triangle:
         pass
     
 def triangles():
-    pass
+    try:
+        base = float(input("enter the length of the base of the triangle: "))
+        height = float(input("enter the height of the triangle: "))
+    except:
+        print("you must enter a number")
+    
+    shape = ()

@@ -1,6 +1,7 @@
 # Eli Robison, the actual calculations happen here
 
-
+# statement to import a function
+from two_D_calculator import *
 
 class rectangular_prism:
     def __init__(self):
