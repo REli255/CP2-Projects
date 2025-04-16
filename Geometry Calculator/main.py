@@ -41,7 +41,7 @@ NOTES:
 """
 
 # statement to import a function
-from calculator import *
+from calculator_menu import *
 
 # function with the user interface
 def main():
@@ -50,9 +50,9 @@ def main():
     3. End
     Enter the number of the thing you would like to do: """)
     if choice == "1":
-        ()
+        two_d_menu()
     elif choice == "2":
-        ()
+        three_d_menu()
     elif choice == "3":
         return "end"
     else:
