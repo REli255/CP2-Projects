@@ -16,7 +16,31 @@ class rectangular_prism:
         pass
 
 def rectangular_prisms():
-    pass
+    choice = input("is it 1. just a rectngle or 2. a square (enter the number next to the option you want): ")
+    if choice == "1":
+        while True:
+            try:
+                width = float(input("enter the width of the rectangle: "))
+                height = float(input("enter the height of the rectangle: "))
+            except:
+                print("you must enter a number")
+                continue
+    
+            shape = ()
+            break
+    elif choice == "2":
+        while True:
+            try:
+                sides = float(input("enter the length of sides the square: "))
+            except:
+                print("you must enter a number")
+                continue
+    
+            shape = ()
+            break
+    else:
+        print("that is not an option")
+        rectangular_prisms
 
 class cylinder:
     def __init__(self):
@@ -27,7 +51,14 @@ class cylinder:
         pass
 
 def cylinders():
-    pass
+    try:
+        radius = float(input("enter the radius of the base of the cylinder: "))
+        height = float(input("enter the height of the cylinder: "))
+    except:
+        print("you must enter a number")
+        cylinders()
+    
+    shape = ()
 
 class triangular_prism:
     def __init__(self):

@@ -13,11 +13,18 @@ def two_d_menu():
     3. Triangle
     4. Exit
     Enter the number of the thing you would like to do: """)
+        
         if choice == "1":
-            rectangles()
+            type_of_info = input("do you want 1. the perimeter or 2. the area (enter the number next to the option you want): ")
+            if type_of_info == "1" or type_of_info == "2":
+                rectangles()
+            else:
+                print("that is not an option")
         elif choice == "2":
+            type_of_info = input("do you want 1. the circumference or 2. the area (enter the number next to the option you want): ")
             circles()
         elif choice == "3":
+            type_of_info = input("do you want 1. the perimeter or 2. the area (enter the number next to the option you want): ")
             triangles()
         elif choice == "4":
             break
@@ -31,6 +38,7 @@ def three_d_menu():
     3. Triangular Prism
     4. Exit
     Enter the number of the thing you would like to do: """)
+        type_of_info = input("do you want 1. the surface area or 2. the volume (enter the number next to the option you want): ")
         if choice == "1":
             rectangular_prisms()
         elif choice == "2":

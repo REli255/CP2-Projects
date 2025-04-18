@@ -1,41 +1,52 @@
 # Eli Robison, the actual calculations happen here
 
 class rectangle:
-    def __init__(self):
-        pass
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
     def perimeter(self):
-        pass
+        edge = (self.width + self.height) * 2
+        return ("the perimeter of the rectangle is", edge)
     def area(self):
-        pass
+        space = self.width * self.height
+        return ("the area of the rectangle is", space)
 
 class square(rectangle):
     def __init__(self):
         super().__init__()
     def square_perimeter(self):
-        pass
+        edge = (self.width + self.height) * 2
+        return ("the perimeter of the square is", edge)
     def square_area(self):
-        pass
+        space = self.width * self.height
+        return ("the area of the rectangle is", space)
 
 def rectangles():
     choice = input("is it 1. just a rectngle or 2. a square (enter the number next to the option you want): ")
     if choice == "1":
-        try:
-            length = float(input("enter the length of the rectangle: "))
-            height = float(input("enter the height of the rectangle: "))
-        except:
-            print("you must enter a number")
+        while True:
+            try:
+                width = float(input("enter the width of the rectangle: "))
+                height = float(input("enter the height of the rectangle: "))
+            except:
+                print("you must enter a number")
+                continue
     
-        shape = ()
+            shape = rectangle(width, height)
+            break
     elif choice == "2":
-        try:
-            length = float(input("enter the length of the rectangle: "))
-            height = float(input("enter the height of the rectangle: "))
-        except:
-            print("you must enter a number")
+        while True:
+            try:
+                sides = float(input("enter the length of sides the square: "))
+            except:
+                print("you must enter a number")
+                continue
     
-        shape = ()
+            shape = square(sides, sides)
+            break
     else:
         print("that is not an option")
+        rectangles()
 
 class circle:
     def __init__(self):
@@ -50,8 +61,9 @@ def circles():
         radius = float(input("enter the radius of the triangle: "))
     except:
         print("you must enter a number")
+        circles()
     
-    shape = ()
+    shape = circle()
 
 class triangle:
     def __init__(self):
@@ -67,5 +79,6 @@ def triangles():
         height = float(input("enter the height of the triangle: "))
     except:
         print("you must enter a number")
+        triangles()
     
-    shape = ()
+    shape = triangle()
