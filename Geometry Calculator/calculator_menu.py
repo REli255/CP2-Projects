@@ -17,19 +17,19 @@ def two_d_menu():
         if choice == "1":
             type_of_info = input("do you want 1. the perimeter or 2. the area (enter the number next to the option you want): ")
             if type_of_info == "1" or type_of_info == "2":
-                rectangles()
+                rectangles(type_of_info)
             else:
                 print("that is not an option")
         elif choice == "2":
             type_of_info = input("do you want 1. the circumference or 2. the area (enter the number next to the option you want): ")
             if type_of_info == "1" or type_of_info == "2":
-                rectangles()
+                circles(type_of_info)
             else:
                 print("that is not an option")
         elif choice == "3":
             type_of_info = input("do you want 1. the perimeter or 2. the area (enter the number next to the option you want): ")
             if type_of_info == "1" or type_of_info == "2":
-                rectangles()
+                triangles(type_of_info)
             else:
                 print("that is not an option")
         elif choice == "4":
@@ -48,12 +48,13 @@ def three_d_menu():
         if type_of_info != "1" and type_of_info != "2":
             print("that is not an option")
             continue
+
         if choice == "1":
-            rectangular_prisms()
+            rectangular_prisms(type_of_info)
         elif choice == "2":
-            cylinders()
+            cylinders(type_of_info)
         elif choice == "3":
-            triangular_prisms()
+            triangular_prisms(type_of_info)
         elif choice == "4":
             break
         else:
