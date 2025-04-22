@@ -9,20 +9,24 @@ class rectangular_prism:
         self.height_rectangle = height_rectangle
         self.height_prism = height_prism
     def surface_area(self):
-        pass
+        edge = (((self.width + self.height_rectangle) * 2) * self.height_prism) + ((self.width * self.height_rectangle) * 2)
+        return f'the surface area of the rectangular prism is {edge}'
     def volume(self):
-        pass
+        space = (self.width * self.height_rectangle) * self.height_prism
+        return f'the volume of the rectangular prism is {space}'
 
 class cube(rectangular_prism):
     def __init__(self, width, height_rectangle, height_prism):
         super().__init__(width, height_rectangle, height_prism)
     def surface_area(self):
-        pass
+        edge = (self.width ** 2) * 6
+        return f'the surface area of the cube is {edge}'
     def volume(self):
-        pass
+        space = self.width ** 3
+        return f'the volume of the cube is {space}'
 
 def rectangular_prisms(type_of_info):
-    choice = input("is it 1. just a rectngle or 2. a square (enter the number next to the option you want): ")
+    choice = input("is it 1. just a rectangular prism or 2. a cube (enter the number next to the option you want): ")
     if choice == "1":
         while True:
             try:
@@ -33,7 +37,12 @@ def rectangular_prisms(type_of_info):
                 print("you must enter a number")
                 continue
     
-            shape = (width, height_rectangle, height_prism)
+            shape = rectangular_prism(width, height_rectangle, height_prism)
+
+            if type_of_info == "1":
+                print(shape.surface_area())
+            elif type_of_info == "2":
+                print(shape.volume())
             break
     elif choice == "2":
         while True:
@@ -43,7 +52,12 @@ def rectangular_prisms(type_of_info):
                 print("you must enter a number")
                 continue
     
-            shape = ()
+            shape = cube(sides, sides, sides)
+
+            if type_of_info == "1":
+                print(shape.surface_area())
+            elif type_of_info == "2":
+                print(shape.volume())
             break
     else:
         print("that is not an option")
@@ -54,9 +68,11 @@ class cylinder:
         self.radius = radius
         self.height = height
     def surface_area(self):
-        pass
+        edge = (((self.radius * 2) * 3.14) * self.height) + (((self.radius ** 2) * 3.14) * 2)
+        return f'the surface area of the cylinder is {edge}'
     def volume(self):
-        pass
+        space = ((self.radius ** 2) * 3.14) * self.height
+        return f'the volume of the cylinder is {space}'
 
 def cylinders(type_of_info):
     try:
@@ -66,7 +82,12 @@ def cylinders(type_of_info):
         print("you must enter a number")
         cylinders(type_of_info)
     
-    shape = (radius, height)
+    shape = cylinder(radius, height)
+
+    if type_of_info == "1":
+        print(shape.surface_area())
+    elif type_of_info == "2":
+        print(shape.volume())
 
 class triangular_prism:
     def __init__(self, base, side_two, side_three, height_triangle, height_prism):
@@ -76,9 +97,11 @@ class triangular_prism:
         self.height_triangle = height_triangle
         self.height_prism = height_prism
     def surface_area(self):
-        pass
+        edge = ((self.base + self.side_two + self.side_three) * self.height_prism) + (((self.base * self.height_triangle) / 2) * 2)
+        return f'the surface area of the triangular_prism is {edge}'
     def volume(self):
-        pass
+        space = ((self.base * self.height_triangle) / 2) * self.height_prism
+        return f'the volume of the triangular_prism is {space}'
 
 def triangular_prisms(type_of_info):
     try:
@@ -92,3 +115,8 @@ def triangular_prisms(type_of_info):
         triangles()
     
     shape = triangular_prism(base, side_two, side_three, height_triangle, height_prism)
+
+    if type_of_info == "1":
+        print(shape.surface_area())
+    elif type_of_info == "2":
+        print(shape.volume())

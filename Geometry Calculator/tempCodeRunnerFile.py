@@ -1,0 +1,1 @@
+a static method in each class
