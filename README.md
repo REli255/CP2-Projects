@@ -16,11 +16,11 @@ Paragraph describing how to use the project.
 ## Used Technologies
 ---
 + First library
-`pi install code for the library`
+`pip install code for the library`
 + Second library
-`pi install code for the library`
+`pip install code for the library`
 + Third library
-`pi install code for the library`
+`pip install code for the library`
 
 ## Current Features
 ---
